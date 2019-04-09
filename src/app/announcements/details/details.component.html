@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 px-0">
+            <div class="content-section announcement-mid panel">
+                <div class="row content-area" style="margin-bottom: 30px !important;">
+                    <div class="col-md-12">
+                        <h3>Announcement Details - Screen</h3>
+                    </div>
+                </div>
+                <div *ngIf="idetails.announceDetails != null" class="row content-area">
+                    <div class="col-md-12" style="margin-top:10px;">
+                        <h4><strong>{{idetails.announceDetails.title}}</strong></h4>
+                    </div>
+                    <div class="col-md-12">
+                        <h4>{{idetails.announceDetails.publishedDate | date:'dd/MM/yyyy'}}</h4>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;">
+                        <h5>{{idetails.announceDetails.body}}</h5>
+                    </div>
+                    <div class="col-md-12" style="margin-top:10px;margin-bottom: 20px;">
+                        <img *ngIf="idetails.announceDetails.image != ''" [src]="idetails.announceDetails.image">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

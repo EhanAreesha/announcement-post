@@ -1,0 +1,48 @@
+.content-section{
+    height: 100vh;
+}
+
+.line{
+    border:1px solid #dee2e6!important;
+    width: 100%;
+}
+
+.play-course-mid{
+    position: relative;
+    top: 60px;
+    left: 0px;
+    right: 0px;
+    width:100%;
+    height: 100vh;
+    max-height: 300px;
+    margin-top: -25px; /*set to a negative number 1/2 of your height*/
+}
+.content-area {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top:10px;
+}
+.oval-dropdown{
+    list-style-type: none;
+    margin: .5rem !important;
+}
+.oval-dropdown-icon{
+    cursor: pointer;
+    height: 30px;
+    width: 40px;
+    border: 1px solid #aaa;
+    border-radius: 20px;
+}
+.oval-dropdown-icon i{
+    padding: 7px 14px;
+}
+.oval-dropdown-border{
+border-bottom: 1px solid #aaa;
+}
+.oval-dropdown-icon a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.oval-dropdown-icon a:hover{
+    text-decoration: none;
+}

@@ -1,0 +1,93 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 px-0">
+            <div class="content-section play-course-mid panel">
+                <div class="row content-area" style="margin-bottom: 30px !important;">
+                    <div class="col-md-12">
+                        <h3><strong>Announcements Admin - Screen</strong></h3>
+                    </div>
+                </div>
+                <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+                <div class="row content-area">
+                    <p-tabView >
+                        <p-tabPanel header="Published">
+                            <p-dataTable [value]="iadmin.tempPublish" [lazy]="true" [rows]="15" [paginator]="true"
+                            [totalRecords]="iadmin.totalPublishedRecords" (onLazyLoad)="publishedPaginate($event)">
+                                <p-column [style]="{'width':'300px'}" field="title" header="Title"></p-column>
+                                <p-column field="modifiedDate" header="Modified On">
+                                    <ng-template let-col let-file="rowData" pTemplate="body">
+                                        {{file[col.field] | date:'dd/MM/yyyy'}}
+                                    </ng-template>
+                                </p-column>
+                                <p-column field="modifiedBy" header="Modified By"></p-column>
+                                <p-column field="status" header="Status"></p-column>
+                                <p-column>
+                                        <ng-template pTemplate="body" let-published="rowData">
+                                        <ul class="oval-dropdown">
+                                            <li class="dropdown oval-dropdown-icon" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-item  oval-dropdown-border" (click)="editPublished(published.id)">Edit</li>
+                                                    <li class="dropdown-item" (click)="deletePublished(published.id)">Delete</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </ng-template>
+                                </p-column>
+                            </p-dataTable>
+                        </p-tabPanel>
+                        <p-tabPanel header="Draft">
+                            <p-dataTable [value]="iadmin.tempDraft" [lazy]="true" [rows]="15" [paginator]="true"
+                            [totalRecords]="iadmin.totalDraftRecords" (onLazyLoad)="draftPaginate($event)">
+                                <p-column [style]="{'width':'300px'}" field="title" header="Title"></p-column>
+                                <p-column field="modifiedDate" header="Modified On">
+                                    <ng-template let-col let-file="rowData" pTemplate="body">
+                                        {{file[col.field] | date:'shortDate'}}
+                                    </ng-template>
+                                </p-column>
+                                <p-column field="modifiedBy" header="Modified By"></p-column>
+                                <p-column field="status" header="Status"></p-column>
+                                <p-column>
+                                    <ng-template pTemplate="body" let-draft="rowData">
+                                        <ul class="oval-dropdown">
+                                                <li class="dropdown oval-dropdown-icon" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i>
+                                                    <ul class="dropdown-menu">
+                                                        <li class="dropdown-item  oval-dropdown-border" (click)="editDraft(draft.id)">Edit</li>
+                                                        <li class="dropdown-item" (click)="deleteDraft(draft.id)">Delete</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                    </ng-template>
+                                </p-column>
+                            </p-dataTable>
+                        </p-tabPanel>
+                        <p-tabPanel header="Archived">
+                            <p-dataTable [value]="iadmin.tempArchived" [lazy]="true" [rows]="15" [paginator]="true"
+                            [totalRecords]="iadmin.totalArchivedRecords" (onLazyLoad)="archivedPaginate($event)">
+                                <p-column [style]="{'width':'300px'}" field="title" header="Title"></p-column>
+                                <p-column field="modifiedDate" header="Modified On">
+                                    <ng-template let-col let-file="rowData" pTemplate="body">
+                                        {{file[col.field] | date:'shortDate'}}
+                                    </ng-template>
+                                </p-column>
+                                <p-column field="modifiedBy" header="Modified By"></p-column>
+                                <p-column field="status" header="Status"></p-column>
+                                <p-column>
+                                    <ng-template pTemplate="body" let-archived="rowData">
+                                        <ul class="oval-dropdown">
+                                            <li class="dropdown oval-dropdown-icon" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i>
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-item  oval-dropdown-border" (click)="editArchived(archived.id)">Edit</li>
+                                                    <li class="dropdown-item" (click)="deleteArchived(archived.id)">Delete</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </ng-template>
+                                </p-column>
+                            </p-dataTable>
+                        </p-tabPanel>
+                    </p-tabView>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+[
+  {
+    "id": "999b907e-4701-4c60-8d3d-3d387cc6247d",
+    "title" : "Announcement Title 1",
+    "isFeatured" : "true",
+    "modifiedDate" : "09/09/2019",
+    "modifiedBy": "John Sha",
+    "status": "published"
+  },
+  {
+    "id": "999b907e-4701-4c60-8d3d-3d387cc6247g",
+    "title" : "Announcement Title 2",
+    "isFeatured" : "true",
+    "modifiedDate" : "09/09/2019",
+    "modifiedBy": "John Sha",
+    "status": "published"
+  },
+  {
+    "id": "999b907e-4701-4c60-8d3d-3d387cc6247e",
+    "title" : "Announcement Title 3",
+    "isFeatured" : "false",
+    "modifiedDate" : "09/09/2019",
+    "modifiedBy": "John Sha",
+    "status": "published"
+  },
+  {
+    "id": "999b907e-4701-4c60-8d3d-3d387cc6247f",
+    "title" : "Announcement Title 4",
+    "isFeatured" : "false",
+    "modifiedDate" : "09/09/2019",
+    "modifiedBy": "John Sha",
+    "status": "published"
+  }
+]

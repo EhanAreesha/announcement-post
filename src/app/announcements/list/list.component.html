@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 px-0">
+            <div class="content-section play-course-mid panel">
+                <div class="row content-area" style="margin-bottom: 30px !important;">
+                    <div class="col-md-8  offset-md-2 pull-md-2">
+                        <h3><strong>Announcement List - Screen</strong></h3>
+                    </div>
+                </div>
+
+                <div *ngFor="let announce of ilist.tempList;let i = index;" class="row content-area">
+                    <div class="col-md-8  offset-md-2 pull-md-2">
+                        <h4><strong>{{announce.title}}</strong></h4>
+                    </div>
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                        <h4>{{announce.publishedDate | date:'dd/MM/yyyy'}}</h4>
+                    </div>
+                    <div class="col-md-8  offset-md-2 pull-md-2" style="margin-top:10px;">
+                        <h4>{{announce.summary}}</h4>
+                    </div>
+                    <div class="col-md-8  offset-md-2 pull-md-2">
+                        <img *ngIf="announce.image !=''" [src]="announce.image">
+                    </div>
+                    <div class="col-md-8  offset-md-2 pull-md-2" style="margin-top: 20px !important;margin-bottom: 10px !important;">
+                        <input type="button" class="btn-default px-3" value="Read More ..." (click)="details(announce.id)">
+                    </div>
+                </div>
+                
+                <div class="row content-area" style="margin-bottom: 50px !important;">
+                    <div class="col-md-8  offset-md-2 pull-md-2">
+                        <p-dataTable [value]="ilist.tempList" [lazy]="true" [paginator]="true"
+                        [rows]="15" [totalRecords]="ilist.totalRecords" (onLazyLoad)="loadCarsLazy($event)">
+                        </p-dataTable>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

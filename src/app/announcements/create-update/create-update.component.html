@@ -1,0 +1,63 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12 px-0">
+            <div class="content-section announcement-mid panel">
+                <div class="row content-area">
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                        <h3><strong>Announcement Create - Screen</strong></h3>
+                    </div>
+                </div>
+                <p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
+                <div class="row content-area">
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                        <input type="text" class="form-control" [(ngModel)]="icreateUpdate.announcement.title" placeholder="Title*">
+                    </div>
+                </div>
+                <div class="row content-area">
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                        <textarea class="form-control" rows="4" [(ngModel)]="icreateUpdate.announcement.summary"  placeholder="Summary*"></textarea>
+                        
+                    </div>
+                </div>
+                <div class="row content-area">
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                        <p-editor  [(ngModel)]="icreateUpdate.announcement.body" [style]="{'height':'200px'}"  placeholder="Body*"></p-editor>
+                    </div>
+                </div>
+                <div class="row content-area">
+                    <div class="col-md-8 offset-md-2 pull-md-2">
+                            <p-checkbox [(ngModel)]="icreateUpdate.announcement.isFeatured" binary="true"></p-checkbox><span>Is Featured</span>
+                    </div>
+                </div>
+                <div class="row content-area">
+                    <div class="col-md-2 offset-md-2 ">
+                        <span>Expiry Date</span>
+                    </div>
+                    <div class="col-md-4 pull-md-4">
+                            {{icreateUpdate.announcement.expiryDate | date:'dd/MM/yyyy'}}
+                            <p-calendar [readonlyInput]="true" dateFormat="dd/mm/yy" [(ngModel)]="icreateUpdate.announcement.expiryDate" [showIcon]="true"></p-calendar>
+                    </div>
+                </div>
+                <div class="row content-area">
+                    <div class="col-md-1 offset-md-2">
+                        <span>Image</span>
+                    </div>
+                    <div class="col-md-4 offset-md-1 pull-md-5">
+                            <input #imageInput
+                            type="file"
+                            accept="image/*"
+                            (change)="onBasicUpload(imageInput)">
+                            <img style="margin-top: 10px;" width="100%" *ngIf="icreateUpdate.announcement.imageUrl!= ''" [src]="icreateUpdate.announcement.imageUrl">
+                    </div>
+                </div>
+                <div class="row content-area" style="margin-bottom: 20px;">
+                    <div class="col-md-5 offset-md-2 pull-md-5">
+                        <input type="button" class="btn btn-primary" [value]="icreateUpdate.buttonText" (click)="save()">
+                        <input type="button" class="btn btn-danger mx-2" value="Delete" (click)="delete()">
+                        <input type="button" class="btn btn-success" value="Publish" (click)="publish()">
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
